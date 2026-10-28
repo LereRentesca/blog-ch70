@@ -14,6 +14,6 @@
     <p>{{ single_post.body }}</p>
     <br>
 
-    <a href="#" class="btn-solid theme-primary">Edit</a>
-    <a href="#" class="btn-solid theme-danger">Delete</a>
+    <a href="{% url 'post_edit' single_post.id %}" class="btn-solid theme-primary">Edit</a>
+    <a href="{% url 'post_delete' single_post.id %}" class="btn-solid theme-danger">Delete</a>
 {% endblock %}
