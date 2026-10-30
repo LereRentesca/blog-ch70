@@ -10,7 +10,7 @@ from django.contrib.auth.views import (
 )
 from django.views.generic import CreateView
 from django.urls import reverse_lazy
-from django.contrib.auth.forms import UserCreationForm
+from .forms import SignUpForm
 
 # Create your views here.
 class CustomLoginView(LoginView):
@@ -23,7 +23,7 @@ class SignUpView(CreateView):
     template_name = "accountsTemplates/signup.html"
     # form_class attribute allow us to create objects from a form file
     # we use this one when we want to have a custom form
-    form_class = UserCreationForm # username, pass1, pass2
+    form_class = SignUpForm # username, email, pass1, pass2
     success_url = reverse_lazy("login")
 
 class CustomPasswordChangeView(PasswordChangeView):
