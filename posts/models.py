@@ -26,3 +26,10 @@ class Post(models.Model):
     def get_absolute_url(self):
         # Automatically redirect the user to an specific endpoint when a POST request is sent
         return reverse("post_detail", args=[self.id])
+    
+class Status(models.Model):
+    name = models.CharField(max_length=128, unique=True)
+    description = models.CharField(max_length=200, help_text="Write a description about the status")
+
+    def __str__(self):
+        return self.name

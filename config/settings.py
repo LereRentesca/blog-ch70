@@ -101,6 +101,12 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+MAILERS = {
+    'default': {
+        #'BACKEND': 'django.core.mail.backends.console.EmailBackend',
+        'BACKEND': 'accounts.mail.PlainConsoleEmailBackend',
+    },
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
@@ -127,3 +133,4 @@ STATICFILES_DIRS = [str(BASE_DIR.joinpath("static"))]
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'login'
